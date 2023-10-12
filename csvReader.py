@@ -41,12 +41,12 @@ def csvReader():
     # list of values.
     for keyNetwork in ipNetworksSorted.keys():
         for thisNetwork in csvImportedData:
-            #if IPv4Network(thisNetwork) != IPv4Network(keyNetwork):                 # Remove duplicates.
-                #if IPv4Network(thisNetwork).subnet_of(IPv4Network(keyNetwork)):
-                    #ipNetworksSorted[keyNetwork].append(thisNetwork)
-            if IPv6Network(thisNetwork) != IPv6Network(keyNetwork):                 # Remove duplicates.
-                if IPv6Network(thisNetwork).subnet_of(IPv6Network(keyNetwork)):
+            if IPv4Network(thisNetwork) != IPv4Network(keyNetwork):                 # Remove duplicates.
+                if IPv4Network(thisNetwork).subnet_of(IPv4Network(keyNetwork)):
                     ipNetworksSorted[keyNetwork].append(thisNetwork)
+            #if IPv6Network(thisNetwork) != IPv6Network(keyNetwork):                 # Remove duplicates.
+                #if IPv6Network(thisNetwork).subnet_of(IPv6Network(keyNetwork)):
+                    #ipNetworksSorted[keyNetwork].append(thisNetwork)
 
     # Iterate through 'ipNetworksSorted' again; populate keys with values into
     # the dictionary variable 'ipNetworksOutput'.  Keys with zero-length values
